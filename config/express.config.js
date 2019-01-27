@@ -11,7 +11,7 @@ module.exports = app => {
         next();
     });
     app.use(busboyBodyParser({ limit: '50mb' }));  
-    app.use("/exit",function(req,res,next){res.end("Bye");server.close();console.log("the server is stopped!");})
+    app.use("/exit",function(req,res,next){res.end("Bye");app.listen.close();console.log("the server is stopped!");})
     //[*] V1 Routes Configuration.
     let viRoutes = require('../routings/v1/');
     app.use('/v1', viRoutes);
