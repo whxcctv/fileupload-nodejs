@@ -7,6 +7,4 @@ require('./config/express.config')(app);
 
 // Mongoose Conf !
 require('./config/mongoose.config')(config, logger);
-var server=happ.listen(config.port, () => {
-  logger.info(`[*] Listening on port ${config.port} ..`);
-});
+var server=http.createServer(app).listen(config.port);
